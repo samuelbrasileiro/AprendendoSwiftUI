@@ -139,7 +139,7 @@ struct ZStackExample: View {
  
  Crie uma interface de cartão de usuário que inclui uma imagem, nome, profissão e um botão para seguir o usuário.
  
- 💡 *Dica:  Lembre-se de que você pode utilizar os ícones do sistema (systemName) para usar imagens aqui, se quiser.*
+ 💡 *Dica:  Lembre-se de que você pode utilizar os ícones do sistema com `Image(systemName: "nome_do_icone")` para usar imagens. Você pode encontrar ícones em [SF Symbols](https://developer.apple.com/sf-symbols/).*
  
  Divirta-se criando sua interface personalizada!
  */
@@ -172,14 +172,22 @@ struct ActivityView: View {
  Há algo que você gostaria de explorar mais ou que acha que poderia ser explicado de forma diferente?
  ### Escreva as reflexões nos comentários:
 */
+//#-hidden-code
+/*
+//#-end-hidden-code
+ 
 //#-editable-code
-// Autoavaliação:
-// Desafios:
-// Aplicações Práticas:
-// Feedback:
+ Autoavaliação:
+ 
+ Desafios:
+ 
+ Aplicações Práticas:
+ 
+ Feedback:
+
 //#-end-editable-code
 //#-hidden-code
-//#-hidden-code
+*/
 struct ContentView: View {
     @State private var selectedExampleIndex = 0
 

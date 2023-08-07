@@ -1,115 +1,151 @@
 /*:
-# Aprendendo SwiftUI - Experimento 4: Botão
+ # Aprendendo SwiftUI - Experimento 4: Botão
 
-## Introdução ao Botão no SwiftUI
+ ## Introdução
 
-Botões são elementos essenciais para adicionar interatividade aos seus aplicativos SwiftUI. Eles permitem que os usuários executem ações, como imprimir uma mensagem na saída, navegar para outra tela ou executar uma tarefa específica.
+ Os botões são elementos fundamentais em qualquer interface de usuário. Eles permitem que o usuário interaja com o aplicativo, executando ações específicas.
 
-## Exemplo Prático: Botão com Print
+ ## O Básico: Como Funciona um Botão?
 
-Vamos começar com um exemplo simples de botão que irá mostrar uma mensagem no console quando for clicado.
+ Um botão no SwiftUI é composto por duas partes principais:
 
-*/
-//#-hidden-code
-import SwiftUI
-import PlaygroundSupport
-//#-end-hidden-code
-struct ButtonExample: View {
-    var body: some View {
-        Button(action: {
-            print("Botão foi clicado!")
-        }) {
-            Text("Clique aqui!")
-            //#-hidden-code
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
-            //#-end-hidden-code
-        }
-        //#-hidden-code
-        .padding()
-        //#-end-hidden-code
-    }
-}
+ 1. **Ação:** O que acontece quando o botão é pressionado.
+ 2. **Conteúdo:** Como o botão é apresentado visualmente.
+
+ Vamos observar um exemplo básico.
+
+ Note que temos a ação (que imprime uma mensagem no console) e o conteúdo (que é um texto).
+ 
+ */
+
+ //#-hidden-code
+ import SwiftUI
+ import PlaygroundSupport
+ //#-end-hidden-code
+
+ struct ButtonExample: View {
+//#-editable-code
+     
+
+     var body: some View {
+         Button(action: {
+             print("Botão foi clicado!")
+         }) {
+             Text("Clique aqui!")
+         }
+         .padding()
+         .background(Color.blue)
+         .foregroundColor(.white)
+         .cornerRadius(10)
+     }
+//#-end-editable-code
+ }
+
 
 /*:
+
+
+## Desafio 1: Botão com Ícone
+
+Ao invés de ser um texto no botão, adicione uma imagem usando `Image(systemName: "nome_do_icone")`.
+ 
+ 💡 *Dica:  Você pode encontrar ícones em [SF Symbols](https://developer.apple.com/sf-symbols/).*
+
 ## Botão com Ação Personalizada
 
-Agora, vamos criar um exemplo de botão que executa uma ação personalizada. Neste caso, quando o botão for clicado, a cor do texto será alterada aleatoriamente.
- 
- O atributo `@State` é usado para permitir que os valores de propriedades sejam atualizados automaticamente, refletindo essas mudanças na interface do SwiftUI em tempo real.
+Já que entendemos o básico, vamos dar um passo adiante. Os botões podem fazer muito mais do que apenas imprimir mensagens. Eles podem mudar o estado de sua interface!
+
 */
 
 struct CustomButtonExample: View {
+//#-editable-code
     @State private var textColor = Color.white
-    
+
     var body: some View {
         Button(action: {
             textColor = getRandomColor()
         }) {
-            Text("Clique para mudar a cor")
-            //#-hidden-code
-                .padding()
-                .foregroundColor(.black)
-            //#-end-hidden-code
-                .background(textColor)
-            //#-hidden-code
-                .cornerRadius(10)
-            //#-end-hidden-code
+            Text("Mude minha cor!")
         }
-        //#-hidden-code
         .padding()
-        //#-end-hidden-code
+        .background(textColor)
+        .cornerRadius(10)
+        .foregroundColor(.black)
     }
-//#-hidden-code
+//#-end-editable-code
+
     private func getRandomColor() -> Color {
-        let colors: [Color] = [.red, .green, .blue, .orange, .purple]
-        return colors.randomElement()!
+        return [Color.red, Color.blue, Color.green].randomElement() ?? .yellow
     }
-//#-end-hidden-code
 }
 
 /*:
-## Vamos Praticar!
+ 
+ ## Entendendo o `@State`
 
-Agora, é hora de você criar um botão mais complexo! Crie um botão que, quando clicado, alterne entre dois textos diferentes: "Hello" e "Olá". Utilize uma propriedade para controlar o texto exibido e alterne entre eles com o botão.
+ O `@State` é uma propriedade wrapper fornecida pelo SwiftUI, que indica que o valor da propriedade pode mudar ao longo do tempo e que a interface deve ser atualizada para refletir essa mudança.
 
-Divirta-se praticando com botões e criando interatividade em seus aplicativos SwiftUI!
+ Imagine `@State` como uma maneira de dizer ao SwiftUI para "observar" uma variável. Quando o valor dessa variável muda, o SwiftUI sabe que precisa reconstruir a view para refletir essa nova informação.
 
+ No nosso exemplo `CustomButtonExample`, o `@State` é usado para monitorar a variável `textColor`. Quando o botão é pressionado e a cor muda, o SwiftUI automaticamente atualiza a view para mostrar a nova cor.
+
+## Desafio 2
+ 
+Ao invés de mudar a cor do fundo do botão, mude a cor do texto do botão!
+
+
+## Desafio 3
+
+Crie um botão que, ao ser pressionado, aumente um contador exibido no texto do botão.
+  
 */
 
-struct ActivityView: View {
-    @State private var textToShow = "Hello"
-    
+struct CounterView: View {
+//#-editable-code
+    // Adicione as variáveis aqui
+
     var body: some View {
         VStack {
-            Button(action: {
-                // Alterne entre "Hello" e "Olá" ao clicar no botão
-                //#-editable-code
-                
-                print("Clicou no botão")
-                
-                //#-end-editable-code
-            }) {
-                Text(textToShow)
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.green)
-                    .cornerRadius(10)
-            }
-            //#-hidden-code
-            .padding()
-            //#-end-hidden-code
+            // Adicione as views aqui
+            
         }
     }
+    
+//#-end-editable-code
 }
 /*:
-$$ Bora Continuar
+## **Refletindo**
  
-Parabéns!Agora você pode criar interatividade em seus aplicativos SwiftUI :)
+### **Autoavaliação:**
+Em uma escala de 1 a 5, quão confortável você se sente ao usar Stacks em SwiftUI?
+
+### **Desafios:**
+Qual foi o aspecto mais desafiador ao trabalhar com Stacks? Há algum conceito que você achou particularmente confuso?
+
+### **Aplicações Práticas:**
+Em quais situações do mundo real você imagina usar Stacks?
+
+### **Feedback:**
+Há algo que você gostaria de explorar mais ou que acha que poderia ser explicado de forma diferente?
+### Escreva as reflexões nos comentários:
 */
 //#-hidden-code
+/*
+//#-end-hidden-code
+ 
+//#-editable-code
+ Autoavaliação:
+ 
+ Desafios:
+ 
+ Aplicações Práticas:
+ 
+ Feedback:
+
+//#-end-editable-code
+//#-hidden-code
+*/
+
 struct ContentView: View {
     @State private var selectedExampleIndex = 0
 
@@ -118,7 +154,7 @@ struct ContentView: View {
             Picker(selection: $selectedExampleIndex, label: Text("Selecione o Exemplo")) {
                 Text("Botão com Print").tag(0)
                 Text("Botão com Ação").tag(1)
-                Text("Atividade").tag(2)
+                Text("Desafio 3").tag(2)
             }
             .pickerStyle(SegmentedPickerStyle())
             
@@ -129,7 +165,7 @@ struct ContentView: View {
             } else if selectedExampleIndex == 1 {
                 CustomButtonExample()
             } else if selectedExampleIndex == 2 {
-                ActivityView()
+                CounterView()
             }
             
             Spacer()

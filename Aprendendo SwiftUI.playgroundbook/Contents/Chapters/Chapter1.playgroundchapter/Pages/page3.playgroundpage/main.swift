@@ -236,13 +236,22 @@ struct Challenge3View: View {
 
  ### Escreva as reflexões nos comentários:
 */
+//#-hidden-code
+/*
+//#-end-hidden-code
+ 
 //#-editable-code
-// Autoavaliação:
-// Desafios:
-// Aplicações Práticas:
-// Feedback:
+ Autoavaliação:
+ 
+ Desafios:
+ 
+ Aplicações Práticas:
+ 
+ Feedback:
+
 //#-end-editable-code
 //#-hidden-code
+*/
 struct ContentView2: View {
     @State private var selectedExampleIndex = 0
     
