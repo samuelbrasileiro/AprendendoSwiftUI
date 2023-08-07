@@ -1,23 +1,19 @@
 /*:
 # Aprendendo SwiftUI - Experimento 3: Stacks
 
-## Introdução aos Stacks
+ ## **Introdução aos Stacks**
+ Stacks no SwiftUI são ferramentas fundamentais que nos permitem alinhar e organizar Views. Eles agem como contêineres que distribuem os elementos de acordo com o tipo do Stack. Existem três tipos principais:
 
-Stacks são uma parte essencial do SwiftUI que nos permitem organizar e posicionar elementos de interface de forma flexível e eficiente. No SwiftUI, existem três tipos principais de Stacks:
+ 1. **VStack:** Alinha os elementos verticalmente.
+ 2. **HStack:** Alinha os elementos horizontalmente.
+ 3. **ZStack:** Sobrepoem os elementos, ideal para criar efeitos de camada.
 
-1. VStack: Uma pilha vertical que organiza seus elementos de cima para baixo.
-2. HStack: Uma pilha horizontal que organiza seus elementos da esquerda para a direita.
-3. ZStack: Uma pilha que posiciona os elementos em uma sobreposição, permitindo criar efeitos de camadas.
+ ## **Aprofundando em Cada Stack**
 
-## Como funciona?
+ ### **VStack: Pilha Vertical**
 
-Abaixo, você encontrará exemplos práticos para cada tipo de Stack (VStack, HStack e ZStack). Execute o Código e use a Segmented Control para selecionar o exemplo que deseja visualizar.
- 
-Adicionei algumas propriedades para melhorar a visualização, mas elas não são o objetivo.
+ Veja como um `VStack` pode organizar os elementos de cima para baixo:
 
-## VStack: Pilha Vertical
-
-Neste exemplo, uma pilha vertical (VStack) organiza três elementos verticalmente: um ícone, um título e uma descrição.
 
 */
 //#-hidden-code
@@ -25,6 +21,8 @@ import PlaygroundSupport
 import SwiftUI
 //#-end-hidden-code
 struct VStackExample: View {
+    //#-editable-code
+    
     var body: some View {
         VStack(spacing: 10) {
             Image(systemName: "person.circle.fill")
@@ -32,7 +30,7 @@ struct VStackExample: View {
                 .frame(width: 100, height: 100)
                 .foregroundColor(.blue)
             
-            Text("John Doe")
+            Text("João das Neves")
                 .font(.headline)
             
             Text("Desenvolvedor iOS")
@@ -40,16 +38,27 @@ struct VStackExample: View {
         }
         .padding()
     }
+    //#-end-editable-code
 }
 
 /*:
-## HStack: Pilha Horizontal
 
-Neste exemplo, uma pilha horizontal (HStack) organiza dois elementos horizontalmente: um ícone e um texto.
+ ## Desafio 1
+
+Agora que você visualizou como funciona a VStack, experimente adicionar mais elementos ao `VStackExample` e observe como eles são organizados.
+ 1. Adicione um novo `Text` com o nome de uma cidade, com cor azul, entre o nome e a profissão.
+ 2. Adicione um novo `Text` com um endereço, depois da profissão.
+ 
+ 
+### **HStack: Pilha Horizontal**
+
+ Observe como um `HStack` organiza os elementos horizontalmente:
 
 */
 
 struct HStackExample: View {
+    //#-editable-code
+    
     var body: some View {
         HStack(spacing: 20) {
             Image(systemName: "heart.fill")
@@ -62,13 +71,16 @@ struct HStackExample: View {
         }
         .padding()
     }
+    //#-end-editable-code
 }
 
-
 /*:
-## VStack e HStack Misturados
+ ### Desafio 2
+ Tente adicionar um ícone adicional à esquerda do texto "Curtir" e observe o comportamento.
+ 
+ ### **Mesclando Stacks**
 
-Agora, vamos combinar os dois Stacks para criar uma interface com o ícone, título, descrição e um botão, todos organizados verticalmente.
+ Não estamos limitados a usar um único tipo de Stack. Veja como você pode combinar um `VStack` e um `HStack` para criar uma interface complexa:
 
 */
 
@@ -80,7 +92,7 @@ struct MixedStacksExample: View {
                 .frame(width: 100, height: 100)
                 .foregroundColor(.blue)
             
-            Text("John Doe")
+            Text("João das Neves")
                 .font(.headline)
             
             Text("Desenvolvedor iOS")
@@ -101,9 +113,9 @@ struct MixedStacksExample: View {
 }
 
 /*:
-## ZStack: Sobreposição de Elementos
+### **ZStack: Pilha deSobreposição**
 
-Uma pilha Z (ZStack) sobrepoem um círculo azul com uma estrela amarela, criando um efeito de camadas.
+ O `ZStack` permite que você crie designs de sobreposição. Elementos adicionados mais recentemente aparecerão "na frente" dos adicionados anteriormente.
 
 */
 
@@ -123,11 +135,11 @@ struct ZStackExample: View {
 }
 
 /*:
- ## Vamos Praticar!
+ ### Desafio 3
  
- Agora é sua vez de praticar! Experimente editar os exemplos existentes ou criar suas próprias interfaces usando VStack, HStack ou ZStack. Use a Segmented Control para selecionar e visualizar cada exemplo.
+ Crie uma interface de cartão de usuário que inclui uma imagem, nome, profissão e um botão para seguir o usuário.
  
- Lembre-se de que você pode utilizar os ícones do sistema (systemName) disponíveis no SwiftUI ou até mesmo adicionar suas próprias imagens.
+ 💡 *Dica:  Lembre-se de que você pode utilizar os ícones do sistema (systemName) para usar imagens aqui, se quiser.*
  
  Divirta-se criando sua interface personalizada!
  */
@@ -145,10 +157,28 @@ struct ActivityView: View {
 }
 
 /*:
-## Bora Continuar
- 
- Agora que você é expert em diagramação de views através de Stacks, bora explorar como funcionam os botões!
+ ## **Refletindo**
+  
+ ### **Autoavaliação:**
+ Em uma escala de 1 a 5, quão confortável você se sente ao usar Stacks em SwiftUI?
+
+ ### **Desafios:**
+ Qual foi o aspecto mais desafiador ao trabalhar com Stacks? Há algum conceito que você achou particularmente confuso?
+
+ ### **Aplicações Práticas:**
+ Em quais situações do mundo real você imagina usar Stacks?
+
+ ### **Feedback:**
+ Há algo que você gostaria de explorar mais ou que acha que poderia ser explicado de forma diferente?
+ ### Escreva as reflexões nos comentários:
 */
+//#-editable-code
+// Autoavaliação:
+// Desafios:
+// Aplicações Práticas:
+// Feedback:
+//#-end-editable-code
+//#-hidden-code
 //#-hidden-code
 struct ContentView: View {
     @State private var selectedExampleIndex = 0
@@ -160,7 +190,7 @@ struct ContentView: View {
                 Text("HStack").tag(1)
                 Text("MixStack").tag(2)
                 Text("ZStack").tag(3)
-                Text("Atividade").tag(4)
+                Text("Desafio 4").tag(4)
             }
             .pickerStyle(SegmentedPickerStyle())
             
