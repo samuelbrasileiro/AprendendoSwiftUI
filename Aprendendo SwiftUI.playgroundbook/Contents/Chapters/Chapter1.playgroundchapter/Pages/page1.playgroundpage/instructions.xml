@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trail version="1.1" name="SwiftUIIntroduction">
+    <steps>
+        <step type="context" name="introduction">
+            <assessment type="programmatic"/>
+            <blocks>
+                <block type="title">
+                    <title id="mVh-eG-oXe">Aprendendo SwiftUI - Introdução! 😃</title>
+                    <text id="vAa-xG-59o">Olá, aluno(a)! Seja bem-vindo ao mundo do SwiftUI! 🚀</text>
+                </block>
+                <block type="text">
+                    <text id="azh-zP-8G4">Neste tutorial, embarcaremos em uma jornada emocionante para aprender a criar interfaces incríveis usando o SwiftUI, uma tecnologia fantástica desenvolvida pela Apple!</text>
+                </block>
+                <block type="title">
+                    <title id="pxq-dV-LOv">Por que aprender SwiftUI?</title>
+                </block>
+                <block type="text">
+                    <text id="rVn-yX-NsP">O SwiftUI é uma maneira inovadora e poderosa de criar interfaces de usuário para aplicativos iOS, macOS, watchOS e tvOS. Com o SwiftUI, você pode trazer suas ideias à vida de forma rápida e divertida, tudo através do código Swift.</text>
+                </block>
+                <block type="title">
+                    <title id="gxh-sN-wv3">Simplicidade e Diversão!</title>
+                </block>
+                <block type="text">
+                    <text id="nTp-oK-x9U">Imagine criar botões, caixas de texto, imagens e muito mais, tudo isso usando a elegância do código Swift. O SwiftUI foi projetado para ser intuitivo e fácil de usar, permitindo que você se concentre na expressão da sua criatividade em vez de lidar com detalhes complexos.</text>
+                </block>
+                <block type="title">
+                    <title id="xzg-eR-cKz">Visualização em Tempo Real!</title>
+                </block>
+                <block type="text">
+                    <text id="dRk-jF-59r">Uma das coisas mais legais sobre o SwiftUI é a capacidade de ver suas alterações em tempo real enquanto escreve o código. Isso significa que você pode fazer experimentos e ajustes imediatamente, tornando o processo de desenvolvimento muito mais interativo e gratificante!</text>
+                </block>
+                <block type="text">
+                    <text id="eJn-pK-LO9">Vamos começar!</text>
+                </block>
+                <block type="text">
+                    <text id="fMn-qX-NO7">Estamos empolgados para iniciar essa jornada com você! Nas próximas páginas, mergulharemos nos conceitos fundamentais do SwiftUI e, ao final deste playground, você estará pronto para criar suas próprias interfaces de usuário deslumbrantes.</text>
+                </block>
+                <block type="text">
+                    <text id="hHo-tV-LO6">Antes de começarmos, por favor, insira seu nome abaixo para personalizarmos sua experiência. 👇</text>
+                </block>
+                <block type="text">
+                    <text id="hHo-tV-LO6">Antes de começarmos, por favor, insira seu nome abaixo para personalizarmos sua experiência. 👇</text>
+                </block>
+                <block type="text" variable="name">
+                    <text id="hHo-tV-LO6">Antes de começarmos, por favor, insira seu nome abaixo para personalizarmos sua experiência. 👇</text>
+                </block>
+            </blocks>
+        </step>
+
+        <message name="introduction-success" sender="byte">
+            <blocks>
+                <block type="text">
+                    <text id="EnW-oR-sQ1"><b>Olá, [name]!</b></text>
+                </block>
+                <block type="text">
+                    <text id="Pvn-dF-iP3">Seja bem-vindo ao mundo do SwiftUI! Estamos animados para começar essa jornada com você e aprender a criar interfaces incríveis usando o poder do código Swift!</text>
+                </block>
+                <block type="text">
+                    <text id="Awp-yT-X2R">Vamos em frente e mergulhar nos conceitos fundamentais do SwiftUI. Preparado para começar?</text>
+                </block>
+                <block type="buttons" alignment="trailing">
+                    <button href="@nextStep" symbol="arrow.right.circle.fill">
+                        <text id="Vhf-lR-X1v">Vamos lá!</text>
+                    </button>
+                </block>
+            </blocks>
+        </message>
+
+        <step type="context" name="aboutSwiftUI">
+            <blocks>
+                <block type="title">
+                    <title id="7uj-eC-LK9">O que é o SwiftUI?</title>
+                </block>
+                <block type="text">
+                    <text id="0ht-4L-cM3">O SwiftUI é uma tecnologia da Apple que permite criar interfaces de usuário para aplicativos de uma maneira fácil e divertida! Com o SwiftUI, você pode criar botões, caixas de texto, imagens e muito mais, tudo usando código Swift!</text>
+                </block>
+                <block type="text">
+                    <text id="9yq-v1-4Dn">Além disso, com o SwiftUI, você pode ver as alterações em tempo real conforme escreve o código. Isso significa que você pode fazer experimentos e ver como seu aplicativo fica na hora!</text>
+                </block>
+                <block type="text">
+                    <text id="3pS-c8-5Gr">Vamos começar a fazer alguns experimentos!</text>
+                </block>
+            </blocks>
+        </step>
+    </steps>
+</trail>
