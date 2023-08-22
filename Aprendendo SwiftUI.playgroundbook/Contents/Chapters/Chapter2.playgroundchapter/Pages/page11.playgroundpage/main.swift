@@ -1,15 +1,26 @@
 /*:
-# Desafio 10: Aplicativo de Desenho Interativo
+# Desafio 10: Aplicativo de Navegação
 
-Neste desafio, você criará um aplicativo de desenho interativo usando gestos (gestures). O aplicativo permitirá que o usuário desenhe na tela arrastando o dedo e também limpe o desenho com um toque.
+Neste desafio, você criará um aplicativo de navegação com várias telas usando SwiftUI. O aplicativo terá uma tela inicial com uma lista de itens e, ao tocar em um item da lista, será exibida uma tela de detalhes com informações mais detalhadas sobre o item selecionado.
 
 ## Passo 1: Estrutura Básica
 
 ```swift
 import SwiftUI
 
-struct DrawingView: View {
-    @State private var points: [CGPoint] = []
+struct Item: Identifiable {
+    let id = UUID()
+    var name: String
+    var description: String
+}
+
+struct ListView: View {
+    let items: [Item] = [
+        Item(name: "Item 1", description: "Descrição do Item 1."),
+        Item(name: "Item 2", description: "Descrição do Item 2."),
+        Item(name: "Item 3", description: "Descrição do Item 3."),
+        // Adicione mais itens aqui
+    ]
 
     var body: some View {
         // Adicione os componentes aqui
@@ -17,164 +28,162 @@ struct DrawingView: View {
 }
 ```
 
-## Passo 2: Desenho Interativo
+## Passo 2: Tela Inicial
 
-Use o gesto `DragGesture` para permitir que o usuário desenhe na tela arrastando o dedo. Adicione os pontos de toque do gesto a um array para formar o desenho.
+Crie a tela inicial com uma lista de itens. Use o componente `List` para exibir os itens e adicione a navegação para a tela de detalhes.
 
 ```swift
-ZStack {
-    // Adicione uma cor de fundo para o desenho
-    Color.white
+NavigationView {
+    List(items) { item in
+        // Adicione o link para a tela de detalhes
+        NavigationLink(destination: Destination, label: {
+            Text(item.name)
+        })
+    }
+}
+```
 
-    // Desenho interativo
-    Path { path in
-        for point in points {
-            path.addLine(to: point)
+## Passo 3: Tela de Detalhes
+
+Crie a tela de detalhes para exibir informações mais detalhadas sobre o item selecionado. Use o componente `Text` para exibir o nome e a descrição do item.
+
+```swift
+struct DetailView: View {
+    let item: Item
+
+    var body: some View {
+        VStack {
+            Text(item.name)
+                .font(.title)
+
+            Text(item.description)
+                .multilineTextAlignment(.center)
         }
     }
-    .stroke(Color.black, lineWidth: 2)
-    .gesture(
-        DragGesture(minimumDistance: 0)
-            .onChanged { value in
-                // Ação do gesto de arrastar o dedo (desenho)
-                points.append(value.location)
-            }
-    )
 }
 ```
 
-## Passo 3: Limpar Desenho
+## Passo 4: Ligando Tela Inicial à Tela de Detalhes
 
-Adicione um gesto de toque (`TapGesture`) para limpar o desenho quando o usuário tocar na tela.
+Agora você deve ligar a tela inicial à tela de detalhes. Quando um item da lista for selecionado, a tela de detalhes com as informações do item selecionado deve ser exibida.
 
 ```swift
-ZStack {
-    // Adicione uma cor de fundo para o desenho
-    Color.white
-
-    // Desenho interativo
-    // (mesmo código do Passo 2)
-
-    .gesture(
-        TapGesture(count: 1)
-            .onEnded {
-                // Ação do gesto de toque (limpar desenho)
-                points.removeAll()
-            }
-    )
+NavigationView {
+    List(items) { item in
+        NavigationLink(destination: DetailView(item: item), label: {
+            Text(item.name)
+        })
+    }
 }
 ```
 
-## Passo 4: Personalização
+## Passo 5: Personalização
 
-Personalize o aplicativo de desenho! Experimente diferentes cores, tamanhos de pincel e interações para criar uma experiência de desenho atraente.
+Personalize o aplicativo de navegação! Experimente diferentes estilos para as listas, detalhes e cores para criar uma experiência de navegação única.
 
-## Passo 5: Desafio Extra (Opcional)
-
- Para o desafio extra, adicione mais opções de personalização ao aplicativo de desenho. Permita ao usuário escolher a cor e o tamanho do pincel para criar desenhos ainda mais criativos.
+## Passo 6: Desafio Extra (Opcional)
  
- ## Meu código
+ Você criará um aplicativo de navegação com várias telas. O aplicativo terá uma tela inicial com uma lista de itens e, ao tocar em um item da lista, será exibida uma tela de detalhes com informações mais detalhadas sobre o item selecionado.
+ 
+## Meu código
 
-   No bloco de código abaixo, complete o desafio:
+No bloco de código abaixo, complete o desafio:
 */
 
-  import SwiftUI
-  import PlaygroundSupport
-  //#-editable-code
+import SwiftUI
+import PlaygroundSupport
+//#-editable-code
+
+// Adicione suas outras views aqui
 
 
-  struct ContentView: View {
-      
-      var body: some View {
-          // Seu código vai aqui!
-          VStack {
-              
-          }
-      }
-  }
+struct ContentView: View {
 
-  //#-end-editable-code
+    
+    var body: some View {
+        // Aqui você adiciona seu código
+        VStack {
+            
+        }
+    }
+}
+//#-end-editable-code
 /*:
 ## Conclusão
 
-Parabéns por concluir o Desafio 10 de Aplicativo de Desenho Interativo! Você criou um aplicativo que permite ao usuário desenhar na tela usando gestos. Continue praticando e experimentando para aprimorar suas habilidades de criação de interfaces interativas com SwiftUI.
+Parabéns por concluir o Desafio 10 de Aplicativo de Navegação! Agora você tem um aplicativo com várias telas, permitindo que o usuário navegue entre os itens e veja mais informações sobre cada um. Continue praticando e experimentando para aprimorar suas habilidades de navegação com SwiftUI.
 
-Os gestos são uma ótima maneira de adicionar interatividade e dinamismo às suas interfaces. Continue explorando e criando projetos para se tornar um(a) expert em gestos com SwiftUI!
+A navegação é um aspecto importante na criação de aplicativos e interfaces complexas, permitindo que os usuários interajam e explorem o conteúdo de maneira intuitiva. Continue explorando e criando projetos para se tornar um(a) expert em navegação com SwiftUI!
 */
 //#-hidden-code
-struct ChallengeView: View {
-    @State private var points: [CGPoint] = []
 
+struct Item: Identifiable {
+    let id = UUID()
+    var name: String
+    var description: String
+}
+
+struct DetailView: View {
+    let item: Item
+    
     var body: some View {
-        ZStack {
-            Color.white
+        VStack {
+            Text(item.name)
+                .font(.title)
             
-            Path { path in
-                for point in points {
-                    path.addLine(to: point)
-                }
-            }
-            .stroke(Color.black, lineWidth: 2)
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged { value in
-                        points.append(value.location)
-                    }
-            )
-            .gesture(
-                TapGesture(count: 1)
-                    .onEnded {
-                        points.removeAll()
-                    }
-            )
+            Text(item.description)
+                .multilineTextAlignment(.center)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.all)
+        .padding()
+    }
+}
+
+struct ChallengeView: View {
+    let items: [Item] = [
+        Item(name: "Item 1", description: "Descrição do Item 1."),
+        Item(name: "Item 2", description: "Descrição do Item 2."),
+        Item(name: "Item 3", description: "Descrição do Item 3.")
+        // Adicione mais itens aqui
+    ]
+    
+    var body: some View {
+        NavigationView {
+            List(items) { item in
+                NavigationLink(destination: DetailView(item: item), label: {
+                    Text(item.name)
+                })
+            }
+            .navigationTitle("Lista de Itens")
+        }
     }
 }
 
 struct ExtraChallengeView: View {
-    @State private var points: [CGPoint] = []
-    @State private var brushColor: Color = .black
-    @State private var brushSize: CGFloat = 2.0
+    let items: [Item] = [
+        Item(name: "Item 1", description: "Descrição do Item 1."),
+        Item(name: "Item 2", description: "Descrição do Item 2."),
+        Item(name: "Item 3", description: "Descrição do Item 3.")
+        // Adicione mais itens aqui
+    ]
+    
+    @State private var selectedItem: Item? = nil
     
     var body: some View {
-        ZStack {
-            Color.white
-            
-            Path { path in
-                for point in points {
-                    path.addLine(to: point)
-                }
+        NavigationView {
+            List(items) { item in
+                Text(item.name)
+                    .onTapGesture {
+                        selectedItem = item
+                    }
             }
-            .stroke(brushColor, lineWidth: brushSize)
-            .gesture(
-                DragGesture(minimumDistance: 0)
-                    .onChanged { value in
-                        points.append(value.location)
-                    }
-            )
-            .gesture(
-                TapGesture(count: 1)
-                    .onEnded {
-                        points.removeAll()
-                    }
-            )
-            
-            VStack {
-                Spacer()
-                HStack {
-                    ColorPicker("Color", selection: $brushColor)
-                        .padding()
-                    Slider(value: $brushSize, in: 1...10, step: 1)
-                        .padding()
-                }
+            .navigationTitle("Lista de Itens")
+            .sheet(item: $selectedItem) { item in
+                DetailView(item: item)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.all)
     }
 }
+
 
 struct SegmentedView: View {
     @State private var selectedIndex = 0

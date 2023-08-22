@@ -89,12 +89,10 @@ struct ChallengeView: View {
     
     var body: some View {
         VStack {
-            LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3), spacing: 8) {
+            LazyVGrid(columns: [.init(), .init()], spacing: 8) {
                 // Adicione miniaturas de fotos clicáveis aqui
                 ForEach(1...9, id: \.self) { index in
-                    Image("photo\(index)")
-                        .resizable()
-                        .scaledToFit()
+                    ([Color.red, Color.blue, Color.green][(index - 1) % 3])
                         .frame(width: 100, height: 100)
                         .onTapGesture {
                             withAnimation(.spring()) {
@@ -105,10 +103,8 @@ struct ChallengeView: View {
             }
             
             if isPhotoExpanded {
-                Image("photo1")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                Color.yellow
+                    .frame(maxWidth: .infinity, minHeight: 80)
                     .background(Color.black)
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
@@ -130,12 +126,10 @@ struct ExtraChallengeView: View {
     
     var body: some View {
         VStack {
-            LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3), spacing: 8) {
+            LazyVGrid(columns: [.init(), .init()], spacing: 8) {
                 // Adicione miniaturas de fotos clicáveis aqui
                 ForEach(1...9, id: \.self) { index in
-                    Image("photo\(index)")
-                        .resizable()
-                        .scaledToFit()
+                    ([Color.red, Color.blue, Color.green][(index - 1) % 3])
                         .frame(width: 100, height: 100)
                         .onTapGesture {
                             withAnimation(.spring()) {
@@ -147,10 +141,8 @@ struct ExtraChallengeView: View {
             }
             
             if isPhotoExpanded {
-                Image("photo\(currentPhotoIndex)")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                ([Color.red, Color.blue, Color.green][(currentPhotoIndex - 1) % 3])
+                    .frame(maxWidth: .infinity, minHeight: 80)
                     .background(Color.black)
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
@@ -212,5 +204,5 @@ struct ExtraChallengeView: View {
  }
  let segmentedView = SegmentedView()
  PlaygroundPage.current.setLiveView(segmentedView)
- //#-end-hidden-code
 
+ //#-end-hidden-code

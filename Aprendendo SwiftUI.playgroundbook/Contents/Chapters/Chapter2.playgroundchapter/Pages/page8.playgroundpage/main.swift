@@ -90,6 +90,7 @@ struct ChallengeView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(isButtonExpanded ? 50 : 10)
+                    .scaleEffect(isButtonExpanded ? 2.0 : 1.0)
             }
             
             Text(isButtonExpanded ? "Botão Expandido!" : "Botão Normal")

@@ -95,12 +95,38 @@ Parabéns por concluir o Desafio 9 de Lista de Filmes com Grids! Você criou um 
 
 As grids são uma ótima maneira de organizar informações e criar layouts flexíveis em suas interfaces. Continue explorando e criando projetos para se tornar um(a) expert em grids com SwiftUI!
  */
- //#-hidden-code
+//#-hidden-code
+struct Movie: Identifiable {
+    let id = UUID()
+    var title: String
+    var imageName: String
+    var description: String
+}
+
+struct MovieCard: View {
+    let movie: Movie
+    
+    var body: some View {
+        VStack {
+            Color.red
+                .frame(minHeight: 80)
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+            Text(movie.title)
+                .font(.headline)
+                .padding(.top, 8)
+        }
+    }
+}
+
 struct ChallengeView: View {
     @State private var selectedMovie: Movie?
     
     var body: some View {
-        LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), spacing: 16) {
+        LazyVGrid(columns: [.init(), .init()], spacing: 16) {
             ForEach(movies) { movie in
                 MovieCard(movie: movie)
                     .onTapGesture {
@@ -118,28 +144,11 @@ struct ChallengeView: View {
         Movie(title: "The Shawshank Redemption", imageName: "shawshank_redemption", description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."),
         Movie(title: "The Godfather", imageName: "the_godfather", description: "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son."),
         Movie(title: "The Dark Knight", imageName: "the_dark_knight", description: "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham."),
-        // Add more movies here
+        Movie(title: "Barbie as Rapunzel", imageName: "barbie_as_rapunzel", description: "Barbie stars as the legendary princess trapped in a tower by an evil sorceress, using her creativity and courage to plot her escape."),
+        Movie(title: "Barbie of Swan Lake", imageName: "barbie_of_swan_lake", description: "In this magical tale, Barbie is transformed into a swan by day and a princess by night, discovering courage and true friendship."),
+        Movie(title: "Barbie and the Magic of Pegasus", imageName: "barbie_and_the_magic_of_pegasus", description: "Barbie embarks on a flying horse adventure to save her sister and defeat an evil wizard with the help of a magical crystal."),
+        Movie(title: "Barbie: A Fashion Fairytale", imageName: "barbie_a_fashion_fairytale", description: "Barbie's fashion dreams come alive in this adventure where she discovers a magical world within her aunt's fashion house.")
     ]
-}
-
-struct MovieCard: View {
-    let movie: Movie
-    
-    var body: some View {
-        VStack {
-            Image(movie.imageName)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
-            Text(movie.title)
-                .font(.headline)
-                .padding(.top, 8)
-        }
-    }
 }
 
 struct MovieDetail: View {
@@ -147,9 +156,8 @@ struct MovieDetail: View {
     
     var body: some View {
         VStack {
-            Image(movie.imageName)
-                .resizable()
-                .scaledToFit()
+                Color.red
+                .frame(minHeight: 80)
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -194,5 +202,5 @@ struct MovieDetail: View {
   }
   let segmentedView = SegmentedView()
   PlaygroundPage.current.setLiveView(segmentedView)
-  //#-end-hidden-code
 
+//#-end-hidden-code
