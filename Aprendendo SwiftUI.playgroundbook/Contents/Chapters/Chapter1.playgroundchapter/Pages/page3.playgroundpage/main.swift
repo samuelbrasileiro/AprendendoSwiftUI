@@ -72,7 +72,6 @@ struct MyTextView_Previews: PreviewProvider {
 */
 
 import SwiftUI
-import PlaygroundSupport
 
 struct Challenge1View: View {
     //#-editable-code
@@ -157,7 +156,6 @@ struct Challenge1View: View {
 */
 
 import SwiftUI
-import PlaygroundSupport
 
 //#-editable-code
 // Adicione os Structs aqui
@@ -191,8 +189,6 @@ struct Challenge2View: View {
 //#-editable-code
 // Adicione os imports aqui
 import SwiftUI
-import PlaygroundSupport
-
 
 //#-end-editable-code
 
@@ -252,6 +248,8 @@ struct Challenge3View: View {
 //#-end-editable-code
 //#-hidden-code
 */
+import PlaygroundSupport
+
 struct ContentView2: View {
     @State private var selectedExampleIndex = 0
     

@@ -89,10 +89,9 @@ Text("Olá, \(nome)!")
  
  ## Desafio 1
 
- 1. Crie uma variável chamada `nome` e mostre ela no `Text`:
+ 1. Adicione um `Text` com o texto "Olá! Tudo bem?":
  ```swift
- var nome: String = "Maria"
- Text("Olá, \(nome)!")
+ Text("Olá! Tudo bem?")
  ```
 */
 
@@ -101,8 +100,7 @@ Text("Olá, \(nome)!")
 
  struct Challenge1View: View {
      //#-editable-code
-     // Adicione a variável aqui
-     
+     // Adicione as variáveis aqui
      
      //#-end-editable-code
      var body: some View {
@@ -119,14 +117,16 @@ Text("Olá, \(nome)!")
  }
  
 /*:
+ 2. Crie uma variável chamada `nome` e mostre ela no `Text`:
+ ```swift
+ var nome: String = "Maria"
+ Text("Olá, \(nome)! Tudo bem?")
  
- 
- 2. O que acontece se o nome for opcional e estiver vazio? Tente aplicar isso no Desafio 1.
+ 3. O que acontece se o nome for opcional e estiver vazio? Tente aplicar isso no Desafio 1.
 
  ```swift
  var nome: String?
- nome = "João"
- Text(nome ?? "Sem Nome")
+ Text("Olá \(nome ?? "Sem Nome")! Tudo bem?")
  ```
  
 💡 *Dica: Usamos `??` para verificar se há um valor na nossa mochila opcional.*
@@ -155,7 +155,9 @@ Text("Texto Centralizado")
 
 ## Desafio 2
 
-Use o espaço abaixo para experimentar! Crie seu próprio estilo para o texto.
+Use o espaço abaixo para experimentar!
+- Modifique o texto para ser um largeTitle de cor vermelha.
+- Descubra como adicionar um background de cor verde para o nosso texto.
 
 */
 

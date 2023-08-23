@@ -76,7 +76,8 @@ struct HStackExample: View {
 
 /*:
  ### Desafio 2
- Tente adicionar um ícone adicional à esquerda do texto "Curtir" e observe o comportamento.
+ Tente adicionar mais uma imagem do sistema de "heart.circle.fill" à esquerda do texto "Curtir" e observe o comportamento.
+ O comportamento foi igual ao que você esperava?
  
  ### **Mesclando Stacks**
 
