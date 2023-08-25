@@ -25,18 +25,16 @@ struct VStackExample: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.blue)
-            
+            Text("Detalhes")
+                .font(.title)
+
             Text("João das Neves")
                 .font(.headline)
             
             Text("Desenvolvedor iOS")
                 .font(.subheadline)
+                .foregroundColor(.gray)
         }
-        .padding()
     }
     //#-end-editable-code
 }
@@ -61,22 +59,17 @@ struct HStackExample: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            Image(systemName: "heart.fill")
-                .resizable()
-                .frame(width: 50, height: 50)
-                .foregroundColor(.red)
+            Text("João das Neves")
             
             Text("Curtir")
-                .font(.headline)
         }
-        .padding()
     }
     //#-end-editable-code
 }
 
 /*:
  ### Desafio 2
- Tente adicionar mais uma imagem do sistema de "heart.circle.fill" à esquerda do texto "Curtir" e observe o comportamento.
+ Tente adicionar um texto com a quantidade de curtidas, como "92 curtidas" à direita do texto "Curtir" e observe o comportamento.
  O comportamento foi igual ao que você esperava?
  
  ### **Mesclando Stacks**
@@ -88,25 +81,19 @@ struct HStackExample: View {
 struct MixedStacksExample: View {
     var body: some View {
         VStack(spacing: 10) {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.blue)
-            
             Text("João das Neves")
                 .font(.headline)
             
             Text("Desenvolvedor iOS")
                 .font(.subheadline)
-            
             HStack {
-                Image(systemName: "heart.fill")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.red)
-                
                 Text("Curtir")
                     .font(.headline)
+                    .foregroundColor(.blue)
+
+                Text("95 curtidas")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
             }
         }
         .padding()
@@ -138,9 +125,9 @@ struct ZStackExample: View {
 /*:
  ### Desafio 3
  
- Crie uma interface de cartão de usuário que inclui uma imagem, nome, profissão e um botão para seguir o usuário.
+ Crie uma interface de cartão de usuário que inclui um nome, profissão, quantidade de seguidores, idade e data de nascimento.
  
- 💡 *Dica:  Lembre-se de que você pode utilizar os ícones do sistema com `Image(systemName: "nome_do_icone")` para usar imagens. Você pode encontrar ícones em [SF Symbols](https://developer.apple.com/sf-symbols/).*
+ Use tanto VStack quanto HStack.
  
  Divirta-se criando sua interface personalizada!
  */

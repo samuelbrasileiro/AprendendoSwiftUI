@@ -1,7 +1,7 @@
 /*:
 # Aprendendo SwiftUI - Introdução! 😃
 
-Olá, aluno(a)! Seja bem-vindo ao mundo do SwiftUI! 🚀
+Olá, Aprendiz! Seja bem-vindo ao mundo do SwiftUI! 🚀
 
 Neste tutorial, embarcaremos em uma jornada emocionante para aprender a criar interfaces incríveis usando o SwiftUI, uma tecnologia fantástica desenvolvida pela Apple!
 

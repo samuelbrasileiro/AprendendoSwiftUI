@@ -45,11 +45,12 @@
 /*:
 
 
-## Desafio 1: Botão com Ícone
+## Desafio 1: Botão com dois textos
 
-Ao invés de ser um texto no botão, adicione uma imagem usando `Image(systemName: "nome_do_icone")`.
+Ao invés de ser apenas um texto no botão, adicione dois textos no Botão.
  
- 💡 *Dica:  Você pode encontrar ícones em [SF Symbols](https://developer.apple.com/sf-symbols/).*
+ 💡 *Dica: Você pode botar os dois textos dentro de um VStack e o VStack dentro do botão.*
+
 
 ## Botão com Ação Personalizada
 
@@ -97,7 +98,13 @@ Ao invés de mudar a cor do fundo do botão, mude a cor do texto do botão!
 ## Desafio 3
 
 Crie um botão que, ao ser pressionado, aumente um contador exibido no texto do botão.
-  
+
+  1. Você vai adicionar uma variável contador
+  `@State var contador: Int = 0`
+  2. Crie um botão, com action e um texto "Adicionar"
+  3. Dentro da action do botão, você escreve contador = contador + 1, para acrescentar 1 no contador
+  4. Adicione um Text para visualizar o valor do contador
+
 */
 
 struct CounterView: View {

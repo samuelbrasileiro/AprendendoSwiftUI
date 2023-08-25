@@ -137,10 +137,40 @@ struct Challenge1View: View {
   ```
 
   🎉 **Resultado:** `Swift Avançado é um livro de Maria José com 300 páginas.`
-
-
  
- ## Desafio 2
+
+ ## Desafio 2: Usando `import`
+ 
+ Já vimos que é possível importar frameworks com a keyword `import`.
+ 
+ 1. Importe o framework `Foundation`.
+ 2. Use a classe `Date` do framework `Foundation` para exibir a data atual na sua View.
+ 
+ 💡 *Dica:  Você pode acessar a data atual com `Date.now`*
+*/
+//#-editable-code
+// Adicione os imports aqui
+import SwiftUI
+
+//#-end-editable-code
+
+struct Challenge2View: View {
+    //#-editable-code
+    // Adicione as variáveis aqui
+    
+    
+    var body: some View {
+        VStack {
+            // Adicione as Views aqui
+            
+            
+        }
+    }
+    //#-end-editable-code
+}
+
+/*:
+ ## Desafio 3 - Opcional
  
  Como agora você já sabe Structs, vamos recriar a View do Desafio 1, agora usando `Struct`.
  
@@ -162,36 +192,6 @@ import SwiftUI
 
 
 //#-end-editable-code
-struct Challenge2View: View {
-    //#-editable-code
-    // Adicione as variáveis aqui
-    
-    
-    var body: some View {
-        VStack {
-            // Adicione as Views aqui
-            
-        }
-    }
-    //#-end-editable-code
-}
-
-/*:
- 
- ## Desafio 3: Usando `import`
- 
- Já vimos que é possível importar frameworks com a keyword `import`.
- 
- 1. Importe o framework `Foundation`.
- 2. Use a classe `Date` do framework `Foundation` para exibir a data atual na sua View.
- 
-*/
-//#-editable-code
-// Adicione os imports aqui
-import SwiftUI
-
-//#-end-editable-code
-
 struct Challenge3View: View {
     //#-editable-code
     // Adicione as variáveis aqui
@@ -200,7 +200,6 @@ struct Challenge3View: View {
     var body: some View {
         VStack {
             // Adicione as Views aqui
-            
             
         }
     }

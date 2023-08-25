@@ -89,7 +89,7 @@ Text("Olá, \(nome)!")
  
  ## Desafio 1
 
- 1. Adicione um `Text` com o texto "Olá! Tudo bem?":
+ 1. Faça uma View com um `Text` com o texto "Olá! Tudo bem?":
  ```swift
  Text("Olá! Tudo bem?")
  ```
@@ -121,8 +121,9 @@ Text("Olá, \(nome)!")
  ```swift
  var nome: String = "Maria"
  Text("Olá, \(nome)! Tudo bem?")
+ ```
  
- 3. O que acontece se o nome for opcional e estiver vazio? Tente aplicar isso no Desafio 1.
+ 3. Extra - O que acontece se o nome for opcional e estiver vazio? Tente aplicar isso no Desafio 1.
 
  ```swift
  var nome: String?
@@ -166,12 +167,13 @@ import PlaygroundSupport
 
 struct Challenge2View: View {
     //#-editable-code
-    @State private var myText: String? = "Me Configure!"
+    var myText: String = "Me Configure!"
+
     //#-end-editable-code
     var body: some View {
         VStack {
             //#-editable-code
-            Text(myText ?? "Texto Padrão")
+            Text(myText)
                 .font(.title)
                 .foregroundColor(.blue)
             //#-end-editable-code
@@ -188,7 +190,7 @@ struct Challenge2View: View {
 
 ## Desafio 3
 
-Agora que você sabe como trabalhar com `Text` e variáveis, tente criar uma saudação personalizada usando o nome e a idade do usuário.
+Agora que você sabe como trabalhar com `Text` e variáveis, tente criar uma tela com uma saudação personalizada usando o nome e a idade do usuário.
 
 1. Crie duas variáveis: `nome` e `idade`.
 2. Use essas variáveis para mostrar um texto no formato: "Olá, [nome]! Você tem [idade] anos!".
